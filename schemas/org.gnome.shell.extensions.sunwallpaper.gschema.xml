@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schemalist>
+
+    <schema
+            id="org.gnome.shell.extensions.sunwallpaper"
+            path="/org/gnome/shell/extensions/sunwallpaper/">
+
+        <key name="latitude" type="d">
+            <default>-6.921786902043592</default>
+            <summary>Latitude</summary>
+            <description>Latitude used for sunrise and sunset calculation</description>
+        </key>
+
+        <key name="longitude" type="d">
+            <default>107.6070875338212</default>
+            <summary>Longitude</summary>
+            <description>Longitude used for sunrise and sunset calculation</description>
+        </key>
+
+        <key name="location-name" type="s">
+            <default>''</default>
+            <summary>Location name</summary>
+            <description>Address resolved from latitude and longitude</description>
+        </key>
+
+        <key name="refresh-interval" type="u">
+            <default>21600</default>
+            <summary>Refresh interval</summary>
+            <description>Legacy setting retained for compatibility</description>
+        </key>
+
+        <key name="wallpaper-sunrise" type="s">
+            <default>''</default>
+            <summary>Sunrise wallpaper</summary>
+            <description>Image used during the sunrise phase</description>
+        </key>
+
+        <key name="wallpaper-day" type="s">
+            <default>''</default>
+            <summary>Day wallpaper</summary>
+            <description>Image used during the day phase</description>
+        </key>
+
+        <key name="wallpaper-sunset" type="s">
+            <default>''</default>
+            <summary>Sunset wallpaper</summary>
+            <description>Image used during the sunset phase</description>
+        </key>
+
+        <key name="wallpaper-night" type="s">
+            <default>''</default>
+            <summary>Night wallpaper</summary>
+            <description>Image used during the night phase</description>
+        </key>
+
+    </schema>
+
+</schemalist>

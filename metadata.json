@@ -1,0 +1,14 @@
+{
+  "uuid": "sunwallpaper@Nurdin027",
+  "name": "Sun Wallpaper",
+  "description": "Automatic wallpaper based on solar time",
+  "version": 1,
+  "shell-version": [
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.sunwallpaper"
+}
