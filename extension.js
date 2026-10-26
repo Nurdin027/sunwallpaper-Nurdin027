@@ -74,6 +74,30 @@ export default class SunWallpaperExtension extends Extension {
             this._settingsChangedId = null;
         }
 
+        if (this._apiTimeoutId) {
+            GLib.Source.remove(this._apiTimeoutId);
+            this._apiTimeoutId = 0;
+        }
+
+        if (this._clockTimeoutId) {
+            GLib.Source.remove(this._clockTimeoutId);
+            this._clockTimeoutId = 0;
+        }
+
+        if (this._label) {
+            this._label.destroy();
+            this._label = null;
+        }
+
+        if (this._statusItem) {
+            this._statusItem.destroy();
+            this._statusItem = null;
+        }
+
+        if (this._locationItem) {
+            this._locationItem.destroy();
+            this._locationItem = null;
+        }
         this._session?.abort();
         this._session = null;
         this._indicator?.destroy();
@@ -107,6 +131,13 @@ export default class SunWallpaperExtension extends Extension {
         this._locationItem = new PopupMenu.PopupMenuItem('Location: --');
         this._locationItem.reactive = false;
         this._indicator.menu.addMenuItem(this._locationItem);
+
+        this._indicator.menu.addMenuItem(
+            new PopupMenu.PopupSeparatorMenuItem()
+        );
+        const settingsItem = new PopupMenu.PopupMenuItem('Settings');
+        settingsItem.connect('activate', () => this.openPreferences());
+        this._indicator.menu.addMenuItem(settingsItem);
     }
 
     async _refreshApi() {
